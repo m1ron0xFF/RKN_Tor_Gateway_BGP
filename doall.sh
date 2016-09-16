@@ -18,7 +18,7 @@ iconv -f cp1251 -t utf8 list_cp1251.xml > list.xml
 
 sed 's/$/\/32/g' iplist.txt > new-ips.txt
 
-sed 's/^/ network /' new-ips.txt > final-ips.txt
+sed 's/^/  network /' new-ips.txt > final-ips.txt
 
 perl quagga_conf_builder.sh
 
