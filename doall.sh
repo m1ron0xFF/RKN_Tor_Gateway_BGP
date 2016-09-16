@@ -1,17 +1,10 @@
 #!/bin/sh
 
 # Download list
-curl -o list_cp1251.xml https://raw.githubusercontent.com/zapret-info/z-i/master/dump.csv
-iconv -f cp1251 -t utf8 list_cp1251.xml > list.xml
+curl -o list.xml https://api.antizapret.info/group.php
 
-# Get IP addresses from list
-./getips.sh
+tr ',' '\n' < list.xml > iplist.txt
 
-# Get hostnames from list
-# ./gethosts.sh
-
-# Resolve A record from hostnames
-# ./resolvehosts.sh
 
 # # Collapse IP Addresses
 # ./collapse.py
